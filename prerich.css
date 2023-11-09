@@ -1,11 +1,21 @@
 @font-face { font-family: ObjectiveBlack; src: url('Objective-ExtraBold.otf'); } 
+@keyframes moveText {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+}
 
 body {
     background-color: #03BAFA;
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    min-height: 100vh;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .logo {
@@ -42,13 +52,14 @@ body {
     position: relative;
     z-index: 4;
     height: fit-content;
+    animation: moveText 5s linear infinite;
 }
 
 .Bunny {
     max-width: 50%; margin-top: -10%; align-self: center;
 }
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 400px){
 .Bunny {
     max-width: 130%; margin-top: -80%; align-self: center;
 }
@@ -94,5 +105,58 @@ body {
     position: relative;
     z-index: 4;
     height: fit-content;
+    animation: moveText 15s linear infinite;
 }
 }
+
+
+@media screen and (max-width: 450px){
+    .Bunny {
+        max-width: 130%; margin-top: -80%; align-self: center;
+    }
+    body {
+        background-color: #03BAFA;
+        display: flex;
+        flex-direction: column;
+        overflow-y: hidden;
+        min-height: 100vh;
+    }
+    
+    .logo {
+        max-width: 300px;
+        align-self: center;
+        margin-top: -15%;
+    }
+    
+    
+    .socialLogos {
+        align-self: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding: 1%;
+        margin-top: -48%;
+    }
+    
+    .socialLogos a {
+        align-self: center;
+        width: fit-content;
+        text-align: center;
+    }
+    .socialLogos img {
+        max-width: 80%;
+    }
+    
+    .text {
+        font-family: ObjectiveBlack;
+        color: white;
+        font-size: 500%;
+        align-self: center;
+        width: max-content;
+        position: relative;
+        z-index: 4;
+        height: fit-content;
+        animation: moveText 15s linear infinite;
+    }
+    }
+    
